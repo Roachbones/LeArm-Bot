@@ -22,8 +22,7 @@ async def on_message(message):
         if match[4]:
             time = int(match[4])
         else:
-            time = int(abs(displacement) * 1.5) + 100
-            
+            time = int(abs(displacement) * 1.5) + 100 # reasonable speed by default
 
         logging.info(
             "command received by {}: move servo {} by {} units in {} ms".format(

@@ -44,7 +44,7 @@ def move_to(servo, position, time):
         get_high_byte(position)
     ])
 
-    # we need position to do this, so: sudo chmod 666 /dev/ttyUSB0
+    # we need permission to do this, so: sudo chmod 666 /dev/ttyUSB0
     with serial.Serial('/dev/ttyUSB0', BAUDRATE, timeout=TIMEOUT) as port:
         port.write(buffer)
     positions[servo] = position
